@@ -32,7 +32,7 @@ L'application Sieve présente plusieurs vulnérabilités critiques liées à des
 
 ##  Étape 1 — Configuration de l'environnement
 
-> 📸 **[CAPTURE — Émulateur Android avec agent Drozer activé]**
+![](./drozer/4.png)
 
 ```
 adb install drozer-agent.apk   → Success
@@ -44,7 +44,7 @@ adb forward tcp:31415 tcp:31415 → 31415
 
 ##  Étape 2 — Connexion Drozer
 
->  **[CAPTURE — Console Drozer connectée]**
+![](./drozer/5.png)
 
 ```
 drozer console connect
@@ -57,13 +57,13 @@ dz>
 
 ##  Étape 3 — Cartographie des composants exposés
 
->  **[CAPTURE — Résultat app.package.info]**
+![](./drozer/9.png)
 
 ### Activities exportées
 ```
 dz> run app.activity.info -a com.withsecure.example.sieve
 ```
->  **[CAPTURE — Résultat app.activity.info]**
+![](./drozer/15.png)
 
 | Activity | Permission |
 |----------|-----------|
@@ -75,7 +75,7 @@ dz> run app.activity.info -a com.withsecure.example.sieve
 ```
 dz> run app.service.info -a com.withsecure.example.sieve
 ```
->  **[CAPTURE — Résultat app.service.info]**
+![](./drozer/11.png)
 
 | Service | Permission |
 |---------|-----------|
@@ -86,7 +86,7 @@ dz> run app.service.info -a com.withsecure.example.sieve
 ```
 dz> run app.broadcast.info -a com.withsecure.example.sieve
 ```
-> **[CAPTURE — Résultat app.broadcast.info]**
+![](./drozer/12.png)
 
 | Receiver | Permission |
 |----------|-----------|
@@ -96,7 +96,7 @@ dz> run app.broadcast.info -a com.withsecure.example.sieve
 ```
 dz> run app.provider.info -a com.withsecure.example.sieve
 ```
->  **[CAPTURE — Résultat app.provider.info]**
+![](./drozer/13.png)
 
 | Provider | Read Permission | Write Permission |
 |----------|----------------|-----------------|
@@ -111,7 +111,7 @@ dz> run app.provider.info -a com.withsecure.example.sieve
 ```
 dz> run app.package.manifest com.withsecure.example.sieve
 ```
->  **[CAPTURE — Manifeste AndroidManifest.xml]**
+![](./drozer/14.png)
 
 **Observations critiques :**
 - `debuggable="true"` → dangereux en production
@@ -122,7 +122,7 @@ dz> run app.package.manifest com.withsecure.example.sieve
 ```
 dz> run scanner.provider.finduris -a com.withsecure.example.sieve
 ```
->  **[CAPTURE — Résultat scanner.provider.finduris]**
+![](./drozer/16.png)
 
 **URIs accessibles sans permission :**
 ```
