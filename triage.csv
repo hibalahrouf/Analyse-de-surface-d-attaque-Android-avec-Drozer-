@@ -1,0 +1,8 @@
+ID,Composant,Vulnerabilite,Confiance,Severite,Impact,Recommandation,Statut 
+V1,PWList,Activity exportee sans protection,Elevee,Critique,Acces direct aux mots de passe,Definir exported=false,A corriger 
+V2,DBContentProvider/Passwords,URI accessible sans permission,Elevee,Critique,Fuite des mots de passe,Ajouter readPermission,A corriger 
+V3,FileSelectActivity,Exportee sans raison,Elevee,Eleve,Acces fichiers non autorise,Definir exported=false,A corriger 
+V4,AuthService,Service exporte sans permission,Elevee,Eleve,Bypass authentification,Ajouter permission,A corriger 
+V5,CryptoService,Service exporte sans permission,Moyenne,Moyen,Operations crypto non autorisees,Ajouter permission,A corriger 
+V6,Application,debuggable=true,Elevee,Moyen,Risque en production,Desactiver debuggable,A corriger 
+V7,Application,allowBackup=true,Moyenne,Moyen,Extraction donnees via backup,Desactiver allowBackup,A corriger
